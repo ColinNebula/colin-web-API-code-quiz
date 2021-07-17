@@ -1,14 +1,27 @@
+//Global Variables
 var body = document.body;
-var count = 0;
-var question1 = page1();
-var answer1 = rightAnswer("string");
-var question2 = page2();
-var answer1 = rightAnswer("parantheses");
+var stringsCounter = 0;
+var booleanCounter = 0;
+var alertsCounter = 0;
+var numbersCounter = 0;
+var counter = 0;
+var h1El = document.createElement('h1');
+
+var h1El = 'Welcome';
+
+
 
 
 var countEl = document.querySelector('#count');
 var timerEl = document.getElementById('countdown');
 var startBtn= document.getElementById('startQuiz');
+
+// Add a centered h2
+var h2El = document.createElement('h2');
+h2El.textContent =
+  'Try to answer the following code-related questions within the time limit. Keep in mind that incorect answers will penalize your score/time by ten seconds!';
+h2El.setAttribute('style', 'margin:auto; width:100%; text-align:center;');
+body.appendChild(h2El);
 
 
 
@@ -34,27 +47,18 @@ function countdown() {
       // Use `clearInterval()` to stop the timer
       clearInterval(timeInterval);
       // Call the `displayMessage()` function
-      displayMessage();
+      //displayMessage();
+      alert("let's begin")
     }
   }, 1000);
 }
 
 
-
-function page1() 
-{
-    window.location = "file:///Z:/Directory/projects/my-webAPI-code-quiz/index1.html"
-}
-
-function page2() 
-{
-    window.location = "file:///Z:/Directory/projects/my-webAPI-code-quiz/index2.html"
-}
-
-function page3() 
-{
-    window.location = "file:///Z:/Directory/projects/my-webAPI-code-quiz/index3.html"
-}
+//function page1() 
+//{
+    //window.location = "file:///Z:/Directory/projects/my-webAPI-code-quiz/index1.html"
+//}
 
 
 startBtn.onclick = countdown;
+console.log("start button pressed");
