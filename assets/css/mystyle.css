@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    padding-top: 0;
+    
+}
+
+header nav {
+   float: center; 
+}
+
+header a {
+    text-decoration: none; 
+    color: #1d1d1b;
+ }
+
+ header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+
+.page-content {
+    text-align: center;
+}
+
+.container {
+  text-align: center;
+}
+
+
+
+
+ .btn {
+    border: none;
+    background-color: rgb(21, 29, 95);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 20px;
+    line-height: 10px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  button[disabled] {
+    cursor: default;
+    background: #c0c7cf;
+  }
