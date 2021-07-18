@@ -1,22 +1,24 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
+
 header {
     text-align: center;
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
     padding-top: 0;
-    
+    margin: 0;
 }
 
-header nav {
-   float: center; 
-}
 
 header a {
     text-decoration: none; 
     color: #1d1d1b;
  }
+
+ 
 
  header nav ul {
     display: flex;
@@ -24,6 +26,18 @@ header a {
     justify-content: space-between;
     align-items: center;
     list-style: none;
+  }
+
+  #play {
+    text-decoration: none;
+    display: none;
+    text-align: center;
+  }
+
+  #score-board {
+    width: 100%;
+    align-items: start;
+    flex-direction: column;
   }
 
 .page-content {
@@ -37,7 +51,7 @@ header a {
 
 
 
- .btn {
+ /*.btn {
     border: none;
     background-color: rgb(21, 29, 95);
     border-radius: 10px;

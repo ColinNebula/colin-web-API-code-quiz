@@ -1,28 +1,21 @@
 //Global Variables
+console.log('start button pressed');
 var body = document.body;
-var stringsCounter = 0;
-var booleanCounter = 0;
-var alertsCounter = 0;
-var numbersCounter = 0;
-var counter = 0;
-var h1El = document.createElement('h1');
+var timeLeft = 60;
+var timeCounter = document.getElementById("time");
+var scoreWrapper = document.getElementById("score-board");
 
-var h1El = 'Welcome';
-
-
-
-
-var countEl = document.querySelector('#count');
-var timerEl = document.getElementById('countdown');
-var startBtn= document.getElementById('startQuiz');
-
-// Add a centered h2
-var h2El = document.createElement('h2');
-h2El.textContent =
-  'Try to answer the following code-related questions within the time limit. Keep in mind that incorect answers will penalize your score/time by ten seconds!';
-h2El.setAttribute('style', 'margin:auto; width:100%; text-align:center;');
-body.appendChild(h2El);
-
+var nextQuestion = document.getElementById("q-btn");
+var introText = document.getElementById("intro-text");
+var firstSection = document.getElementById("start-div");
+var description = document.getElementById("info");
+var startEl = document.querySelector("btn");
+var currentSet = [];
+var questionNum = 0;
+var scoreArray = [];
+var startBtn = document.getElementById("countdown");
+var startBtn = document.getElementById('startQuiz');
+var answerBtns = document.querySelector("answers");
 
 
 // Timer that counts down from 5
@@ -48,17 +41,15 @@ function countdown() {
       clearInterval(timeInterval);
       // Call the `displayMessage()` function
       //displayMessage();
-      alert("let's begin")
+      endCountdown();
     }
   }, 1000);
 }
 
-
-//function page1() 
-//{
-    //window.location = "file:///Z:/Directory/projects/my-webAPI-code-quiz/index1.html"
-//}
-
-
 startBtn.onclick = countdown;
-console.log("start button pressed");
+
+console.log('start button pressed');
+
+
+//startBtn.addEventListener('click', countdown);
+//start.addEventListener('click', startQuiz);
