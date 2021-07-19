@@ -2,20 +2,18 @@
 console.log('start button pressed');
 var body = document.body;
 var timeLeft = 60;
+var mainEl = document.getElementById('main');
 var timeCounter = document.getElementById("time");
-var scoreWrapper = document.getElementById("score-board");
-
+var emailInput = document.querySelector('#email');
 var nextQuestion = document.getElementById("q-btn");
 var introText = document.getElementById("intro-text");
-var firstSection = document.getElementById("start-div");
+var msgDiv = document.querySelector('#msg');
 var description = document.getElementById("info");
 var startEl = document.querySelector("btn");
-var currentSet = [];
-var questionNum = 0;
-var scoreArray = [];
-var startBtn = document.getElementById("countdown");
-var startBtn = document.getElementById('startQuiz');
-var answerBtns = document.querySelector("answers");
+var userEmailSpan = document.querySelector('#user-email');
+var timerEl = document.getElementById('countdown');
+var startBtn = document.getElementById('start');
+var stringButton = document.querySelector('#string');
 
 
 // Timer that counts down from 5
@@ -40,15 +38,92 @@ function countdown() {
       // Use `clearInterval()` to stop the timer
       clearInterval(timeInterval);
       // Call the `displayMessage()` function
-      //displayMessage();
-      endCountdown();
+      displayMessage();
+      
     }
   }, 1000);
 }
 
+var question1 = []
+
+// We start the game with a score of 0.
+var score = 0;
+
+// Loop over every question object
+for (var i = 0; i < question1.length; i++) {
+  // Display current question to user and ask OK/Cancel
+  var answer = confirm(questions[i].q);
+
+  // Compare answers
+  if (
+    (answer === true && question1[i].a === 't') ||
+    (answer === false && question1[i].a === 'f')
+  ) {
+    // Increase score
+    score++;
+    // Alert the user
+    alert('Correct!');
+  } else {
+    alert('Wrong!');
+  }
+}
+
+function renderLastRegistered() {
+  // Retrieve the last email and password from localStorage using `getItem()`
+  var email = localStorage.getItem('email');
+  
+  // If they are null, return early from this function
+  if (email === null) {
+    return;
+  }
+
+  // Set the text of the 'userEmailSpan' and 'userPasswordSpan' to the corresponding values from localStorage
+  userEmailSpan.textContent = email;
+}
+
+renderLastRegistered();
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute('class', type);
+}
+
+
+var initials = document.querySelector('#initials').value;
+
+if (initials === '') {
+  displayMessage('error', 'Email cannot be blank');
+} else {
+  displayMessage('success', 'Registered successfully');
+
+  // The Save task Function to local storage
+var saveInitials = function() {
+  localStorage.setItem("initials", JSON.stringify(initials));
+};
+
+  // Save initials to localStorage using `setItem()`
+  localStorage.setItem('initials', initials);
+
+  saveInitials();
+
+  // remove all tasks
+$("#remove-initials").on("click", function() {
+  for (var key in tasks) {
+    tasks[key].length = 0;
+    $("#list-" + key).empty();
+  }
+  saveInitials();
+});
+
+  renderLastRegistered();
+
+}
+
+
 startBtn.onclick = countdown;
 
 console.log('start button pressed');
+
 
 
 //startBtn.addEventListener('click', countdown);
