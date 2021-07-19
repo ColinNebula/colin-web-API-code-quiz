@@ -4,13 +4,11 @@ var body = document.body;
 var timeLeft = 60;
 var mainEl = document.getElementById('main');
 var timeCounter = document.getElementById("time");
-var emailInput = document.querySelector('#email');
-var nextQuestion = document.getElementById("q-btn");
+var initialsInput = document.querySelector('#initials');
 var introText = document.getElementById("intro-text");
 var msgDiv = document.querySelector('#msg');
-var description = document.getElementById("info");
 var startEl = document.querySelector("btn");
-var userEmailSpan = document.querySelector('#user-email');
+var userInitialsSpan = document.querySelector('#user-initials');
 var timerEl = document.getElementById('countdown');
 var startBtn = document.getElementById('start');
 var stringButton = document.querySelector('#string');
@@ -56,8 +54,8 @@ for (var i = 0; i < question1.length; i++) {
 
   // Compare answers
   if (
-    (answer === true && question1[i].a === 't') ||
-    (answer === false && question1[i].a === 'f')
+    (answer === true && question1[i].a === 'true') ||
+    (answer === false && question1[i].a === 'false')
   ) {
     // Increase score
     score++;
