@@ -1,18 +1,17 @@
-//Global Variables
-console.log('start button pressed');
-var body = document.body;
-var timeLeft = 60;
+console.log('outside');
 var mainEl = document.getElementById('main');
-var timeCounter = document.getElementById("time");
-var initialsInput = document.querySelector('#initials');
-var introText = document.getElementById("intro-text");
-var msgDiv = document.querySelector('#msg');
-var startEl = document.querySelector("btn");
-var userInitialsSpan = document.querySelector('#user-initials');
 var timerEl = document.getElementById('countdown');
 var startBtn = document.getElementById('start');
-var stringButton = document.querySelector('#string');
+var countEl = document.getElementById('count');
+var question1El = document.getElementById('question1');
 
+
+// The count element
+var countEl = document.querySelector('#count');
+// The variable for count
+var count = 0;
+
+console.log('inside');
 
 // Timer that counts down from 5
 function countdown() {
@@ -36,93 +35,16 @@ function countdown() {
       // Use `clearInterval()` to stop the timer
       clearInterval(timeInterval);
       // Call the `displayMessage()` function
-      displayMessage();
-      
+      location.replace('index1.html');
     }
   }, 1000);
 }
 
-var question1 = []
-
-// We start the game with a score of 0.
-var score = 0;
-
-// Loop over every question object
-for (var i = 0; i < question1.length; i++) {
-  // Display current question to user and ask OK/Cancel
-  var answer = confirm(questions[i].q);
-
-  // Compare answers
-  if (
-    (answer === true && question1[i].a === 'true') ||
-    (answer === false && question1[i].a === 'false')
-  ) {
-    // Increase score
-    score++;
-    // Alert the user
-    alert('Correct!');
-  } else {
-    alert('Wrong!');
-  }
-}
-
-function renderLastRegistered() {
-  // Retrieve the last email and password from localStorage using `getItem()`
-  var email = localStorage.getItem('email');
-  
-  // If they are null, return early from this function
-  if (email === null) {
-    return;
-  }
-
-  // Set the text of the 'userEmailSpan' and 'userPasswordSpan' to the corresponding values from localStorage
-  userEmailSpan.textContent = email;
-}
-
-renderLastRegistered();
-
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute('class', type);
-}
 
 
-var initials = document.querySelector('#initials').value;
 
-if (initials === '') {
-  displayMessage('error', 'Email cannot be blank');
-} else {
-  displayMessage('success', 'Registered successfully');
-
-  // The Save task Function to local storage
-var saveInitials = function() {
-  localStorage.setItem("initials", JSON.stringify(initials));
-};
-
-  // Save initials to localStorage using `setItem()`
-  localStorage.setItem('initials', initials);
-
-  saveInitials();
-
-  // remove all tasks
-$("#remove-initials").on("click", function() {
-  for (var key in tasks) {
-    tasks[key].length = 0;
-    $("#list-" + key).empty();
-  }
-  saveInitials();
-});
-
-  renderLastRegistered();
-
-}
 
 
 startBtn.onclick = countdown;
+console.log('outside');
 
-console.log('start button pressed');
-
-
-
-//startBtn.addEventListener('click', countdown);
-//start.addEventListener('click', startQuiz);
