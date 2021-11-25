@@ -1,11 +1,11 @@
 ## My Web API Code Quiz
 ## Description
-The codee Quiz app is a multiple choice questionnaire about some of JavaScript operations. 
+The code Quiz app is a multiple choice questionnaire about some of JavaScript operations. 
 It runs in the browser and features dynamically generated HTMM and CSS.
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [Credits](#credits)
+* [Author](#author)
 * [License](#license)
 ## User Story
 AS A coding boot camp student
@@ -16,26 +16,18 @@ SO THAT I can gauge my progress compared to my peers
 https://colinnebula.github.io/my-webAPI-code-quiz/
 
 ## Colin Nebula GitHub Repository
-https://github.com/ColinNebula/my-webAPI-code-quiz/tree/develop
+https://github.com/ColinNebula/colin-web-API-code-quiz/tree/main
 
 ## Screenshot for Code Quiz Challenge
-![Screenshot-Code-quiz-challenge](https://user-images.githubusercontent.com/57843842/126100190-50e5e2a2-f120-4cd2-b238-14189b53eba6.png)
-
+![Project_Screenshot](https://user-images.githubusercontent.com/57843842/143322177-8035da11-04d0-4056-bbd6-c7b314e28c1a.jpg)
 ## The Markup
 ![04-web-apis-homework-demo](https://user-images.githubusercontent.com/57843842/126083770-956f034c-7efd-4603-a4ac-3d8d18cf485e.gif)
 ## Installatinon 
 * Clone the repository
 * Download the repository to a desktop 
 * Click on Index.html to run
-## Development 
-N/A
-
-## License 
-MIT
-
-## Contribute
-Debugging, adding new features
-
+## License
+This application is covered by [MIT](https://opensource.org/licenses/MIT) license.
 ## Criteria
 GIVEN I am taking a code quiz
 WHEN I click the start button
